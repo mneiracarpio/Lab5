@@ -27,11 +27,8 @@ public class ShoppingListServlet extends HttpServlet {
         String name = (String) request.getSession().getAttribute("name");
         
         String action = request.getParameter("action");
-        System.out.println("Entre 0.0");
         if (action != null && action.equals("logout")) {
-            System.out.println("Entre 0");
             request.getSession().invalidate();
-            System.out.println("Entre 1");
             //response.sendRedirect("register");
             //return;
             this.getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
